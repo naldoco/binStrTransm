@@ -1,5 +1,5 @@
 module BinStrTransm where
---import Data.Char
+import Data.Char
 
 type Bit = Int
 
@@ -18,4 +18,4 @@ make8 :: [Bit] -> [Bit]
 make8 xb = take 8 (xb ++ repeat 0)
 
 encode :: String -> [Bit]
-encode = undefined
+encode = concat . map (make8 . int2bin . ord)

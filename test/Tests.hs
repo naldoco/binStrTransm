@@ -4,7 +4,6 @@ import Test.Tasty
 import Test.Tasty.HUnit
 
 import BinStrTransm
-import Data.Char
 
 message = "Hello world!"
 b2i_1   = [1, 0, 1, 1] ; i2b_1 = 13

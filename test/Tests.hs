@@ -61,6 +61,10 @@ binStrTransmSuite =
         [ testCase ("encode " ++ (show abc)   ++  "-> " ++ show abc_3) $
             (show $  encode $          abc) @?=            show abc_3
         ]
+    , testGroup "chop8"
+        [ testCase ("chop8 "  ++ (show abc_3) ++  "-> " ++ show abc_2) $
+            (show $  chop8 $           abc_3) @?=          show abc_2
+        ]
     , testGroup "decode"
         [ testCase ("decode " ++ (show abc_3) ++  "-> " ++ show abc) $
             (show $  decode $          abc_3) @?=          show abc

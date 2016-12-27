@@ -10,4 +10,5 @@ bin2int bits = sum [w * b | (w,b) <- zip weights bits]
                   where weights = iterate (*2) 1
 
 int2bin :: Int -> [Bit]
-int2bin = undefined
+int2bin 0 = []
+int2bin n = n `mod` 2 : int2bin (n `div` 2)

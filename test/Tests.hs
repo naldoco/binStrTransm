@@ -4,6 +4,7 @@ import Test.Tasty
 import Test.Tasty.HUnit
 
 import BinStrTransm
+import Data.Char
 
 message = "Hello world!"
 b2i_1   = [1, 0, 1, 1] ; i2b_1 = 13
@@ -11,6 +12,10 @@ b2i_2   = [0, 0, 0, 0] ; i2b_2 =  0
 b2i_3   = [1, 0, 0, 0] ; i2b_3 =  1
 b2i_4   = [0, 0, 0, 1] ; i2b_4 =  8
 b2i_5   = [1, 0, 1, 0] ; i2b_5 =  5
+abc     = "ABC"
+abc_1 = [65,66,67]
+abc_2 = [[1,0,0,0,0,0,1,0],[0,1,0,0,0,0,1,0],[1,1,0,0,0,0,1,0]]
+abc_3 = [ 1,0,0,0,0,0,1,0 , 0,1,0,0,0,0,1,0 , 1,1,0,0,0,0,1,0 ] 
 
 binStrTransmSuite :: TestTree
 binStrTransmSuite =
@@ -52,6 +57,10 @@ binStrTransmSuite =
             (show $  make8 . int2bin $          i2b_4) @?=    "[0,0,0,1,0,0,0,0]"
         , testCase ("make8 . int2bin  " ++ (show i2b_5) ++ "-> [1,0,1,0,0,0,0,0]") $
             (show $  make8 . int2bin $          i2b_5) @?=    "[1,0,1,0,0,0,0,0]"
+        ]
+    , testGroup "encode"
+        [ testCase ("encode " ++ (show abc) ++  "-> " ++ show abc_3) $
+            (show $  encode $          abc) @?=          show abc_3
         ]
     ]
 

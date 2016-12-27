@@ -14,7 +14,7 @@ b2i_5   = [1, 0, 1, 0] ; i2b_5 =  5
 abc     = "ABC"
 abc_1 = [65,66,67]
 abc_2 = [[1,0,0,0,0,0,1,0],[0,1,0,0,0,0,1,0],[1,1,0,0,0,0,1,0]]
-abc_3 = [ 1,0,0,0,0,0,1,0 , 0,1,0,0,0,0,1,0 , 1,1,0,0,0,0,1,0 ] 
+abc_3 = [ 1,0,0,0,0,0,1,0 , 0,1,0,0,0,0,1,0 , 1,1,0,0,0,0,1,0 ]
 
 binStrTransmSuite :: TestTree
 binStrTransmSuite =
@@ -58,8 +58,12 @@ binStrTransmSuite =
             (show $  make8 . int2bin $          i2b_5) @?=    "[1,0,1,0,0,0,0,0]"
         ]
     , testGroup "encode"
-        [ testCase ("encode " ++ (show abc) ++  "-> " ++ show abc_3) $
-            (show $  encode $          abc) @?=          show abc_3
+        [ testCase ("encode " ++ (show abc)   ++  "-> " ++ show abc_3) $
+            (show $  encode $          abc) @?=            show abc_3
+        ]
+    , testGroup "decode"
+        [ testCase ("decode " ++ (show abc_3) ++  "-> " ++ show abc) $
+            (show $  decode $          abc_3) @?=          show abc
         ]
     ]
 

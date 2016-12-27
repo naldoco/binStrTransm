@@ -19,3 +19,6 @@ make8 xb = take 8 (xb ++ repeat 0)
 
 encode :: String -> [Bit]
 encode = concat . map (make8 . int2bin . ord)
+
+decode :: [Bit] -> String
+decode = undefined

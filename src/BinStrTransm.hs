@@ -25,4 +25,4 @@ chop8 [] = []
 chop8 bits = take 8 bits : chop8 (drop 8 bits)
          
 decode :: [Bit] -> String
-decode bits = map (chr . bin2int) $ chop8 bits
+decode = map (chr . bin2int) . chop8

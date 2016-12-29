@@ -69,6 +69,10 @@ binStrTransmSuite =
         [ testCase ("decode " ++ (show abc_3) ++  "-> " ++ show abc) $
             (show $  decode $          abc_3) @?=          show abc
         ]
+    , testGroup "transmit"
+        [ testCase ("transmit " ++ (show abc) ++  "-> " ++ show abc) $
+            (show $  transmit $          abc) @?=          show abc
+        ]
     ]
 
 main = defaultMain binStrTransmSuite

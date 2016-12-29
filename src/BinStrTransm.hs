@@ -3,8 +3,8 @@ import Data.Char
 
 type Bit = Int
 
-transmit :: String -> String
-transmit xs = "Hello world!"
+-- transmit :: String -> String
+-- transmit xs = "Hello world!"
 
 bin2int :: [Bit] -> Int
 bin2int bits = sum [w * b | (w,b) <- zip weights bits]
@@ -26,3 +26,6 @@ chop8 bits = take 8 bits : chop8 (drop 8 bits)
          
 decode :: [Bit] -> String
 decode = map (chr . bin2int) . chop8
+
+transmit :: String -> String
+transmit = undefined

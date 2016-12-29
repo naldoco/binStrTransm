@@ -29,3 +29,6 @@ decode = map (chr . bin2int) . chop8
 
 transmit :: String -> String
 transmit = undefined
+
+channel :: [Bit] -> [Bit]
+channel = id

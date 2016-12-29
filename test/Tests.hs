@@ -25,7 +25,7 @@ binStrTransmSuite =
             (transmit message) @?= "Hello world!"
         ]
     , testGroup "bin2int"
-        [ testCase ("bin2int " ++ (show b2i_1) ++  " -> 13") $
+        [ testCase ("bin2int  " ++ (show b2i_1) ++  " -> 13") $
             (show $  bin2int            b2i_1) @?=     "13"
         , testCase ("bin2int  " ++ (show b2i_2) ++ " ->  0") $
             (show $  bin2int            b2i_2) @?=      "0"

@@ -1,3 +1,5 @@
+-- Binary string transmitter.
+-- Hutton. Programming in Haskell 2 ed. p 82
 module BinStrTransm where
 import Data.Char
 

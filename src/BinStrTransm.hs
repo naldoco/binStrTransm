@@ -28,7 +28,7 @@ decode :: [Bit] -> String
 decode = map (chr . bin2int) . chop8
 
 transmit :: String -> String
-transmit = undefined
+transmit = decode . channel . encode
 
 channel :: [Bit] -> [Bit]
 channel = id

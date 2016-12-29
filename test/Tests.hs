@@ -6,6 +6,7 @@ import Test.Tasty.HUnit
 import BinStrTransm
 
 message = "Hello world!"
+message2 = "higher-order functions are easy"
 b2i_1   = [1, 0, 1, 1] ; i2b_1 = 13
 b2i_2   = [0, 0, 0, 0] ; i2b_2 =  0
 b2i_3   = [1, 0, 0, 0] ; i2b_3 =  1
@@ -72,6 +73,8 @@ binStrTransmSuite =
     , testGroup "transmit"
         [ testCase ("transmit " ++ (show abc) ++  "-> " ++ show abc) $
             (show $  transmit $          abc) @?=          show abc
+        , testCase ("transmit " ++ (show message2) ++  "-> " ++ show message2) $
+            (show $  transmit $          message2) @?=          show message2
         ]
     ]
 
